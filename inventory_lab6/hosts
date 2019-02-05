@@ -1,0 +1,2 @@
+bastion.2c70.internal ansible_connection=local
+support1.2c70.internal ansible_connection=ssh

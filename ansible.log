@@ -34,3 +34,694 @@ The offending line appears to be:
 
 2019-02-05 13:50:24,784 p=1782 u=devops |  PLAY RECAP *****************************************************************************************************************************************************************************************
 2019-02-05 13:50:24,784 p=1782 u=devops |  support1.2c70.internal     : ok=6    changed=1    unreachable=0    failed=1   
+2019-02-05 14:36:58,578 p=2285 u=devops |  PLAY [webservers] **********************************************************************************************************************************************************************************
+2019-02-05 14:36:58,587 p=2285 u=devops |  TASK [Gathering Facts] *****************************************************************************************************************************************************************************
+2019-02-05 14:36:58,644 p=2285 u=devops |  fatal: [app1.2c70.internal]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh_exchange_identification: Connection closed by remote host\r\n", "unreachable": true}
+2019-02-05 14:37:01,044 p=2285 u=devops |  ok: [app2.2c70.internal]
+2019-02-05 14:37:01,060 p=2285 u=devops |  TASK [template] ************************************************************************************************************************************************************************************
+2019-02-05 14:37:02,098 p=2285 u=devops |  changed: [app2.2c70.internal]
+2019-02-05 14:37:02,100 p=2285 u=devops |  	to retry, use: --limit @/home/devops/ansible_implementation/motd.retry
+
+2019-02-05 14:37:02,101 p=2285 u=devops |  PLAY RECAP *****************************************************************************************************************************************************************************************
+2019-02-05 14:37:02,101 p=2285 u=devops |  app1.2c70.internal         : ok=0    changed=0    unreachable=1    failed=0   
+2019-02-05 14:37:02,101 p=2285 u=devops |  app2.2c70.internal         : ok=2    changed=1    unreachable=0    failed=0   
+2019-02-05 14:37:36,723 p=2328 u=devops |  app1.2c70.internal | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh_exchange_identification: Connection closed by remote host\r\n", 
+    "unreachable": true
+}
+2019-02-05 14:37:37,189 p=2328 u=devops |  app2.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 14:38:02,287 p=2352 u=devops |  app1.2c70.internal | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh_exchange_identification: Connection closed by remote host\r\n", 
+    "unreachable": true
+}
+2019-02-05 14:38:02,364 p=2352 u=devops |  suppport1.2c70.internal | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh_exchange_identification: Connection closed by remote host\r\n", 
+    "unreachable": true
+}
+2019-02-05 14:38:02,618 p=2352 u=devops |  app2.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 14:38:04,361 p=2352 u=devops |  support1.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 14:38:04,539 p=2352 u=devops |  appdb1.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 14:38:04,919 p=2352 u=devops |  frontend1.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 15:07:46,925 p=2544 u=devops |  PLAY [db] ******************************************************************************************************************************************************************************************
+2019-02-05 15:07:46,934 p=2544 u=devops |  TASK [Gathering Facts] *****************************************************************************************************************************************************************************
+2019-02-05 15:07:49,230 p=2544 u=devops |  ok: [appdb1.2c70.internal]
+2019-02-05 15:07:49,245 p=2544 u=devops |  TASK [Gather facts] ********************************************************************************************************************************************************************************
+2019-02-05 15:07:49,823 p=2544 u=devops |  ok: [appdb1.2c70.internal]
+2019-02-05 15:07:49,838 p=2544 u=devops |  TASK [Display facts] *******************************************************************************************************************************************************************************
+2019-02-05 15:07:49,896 p=2544 u=devops |  ok: [appdb1.2c70.internal] => {
+    "db_facts": {
+        "ansible_facts": {
+            "ansible_all_ipv4_addresses": [
+                "192.199.0.35"
+            ], 
+            "ansible_all_ipv6_addresses": [
+                "fe80::422:fbff:fe8c:b91c"
+            ], 
+            "ansible_apparmor": {
+                "status": "disabled"
+            }, 
+            "ansible_architecture": "x86_64", 
+            "ansible_bios_date": "08/24/2006", 
+            "ansible_bios_version": "4.2.amazon", 
+            "ansible_cmdline": {
+                "BOOT_IMAGE": "/boot/vmlinuz-3.10.0-693.el7.x86_64", 
+                "LANG": "en_US.UTF-8", 
+                "console": "tty0", 
+                "crashkernel": "auto", 
+                "net.ifnames": "0", 
+                "ro": true, 
+                "root": "UUID=de4def96-ff72-4eb9-ad5e-0847257d1866"
+            }, 
+            "ansible_date_time": {
+                "date": "2019-02-05", 
+                "day": "05", 
+                "epoch": "1549379269", 
+                "hour": "15", 
+                "iso8601": "2019-02-05T15:07:49Z", 
+                "iso8601_basic": "20190205T150749708266", 
+                "iso8601_basic_short": "20190205T150749", 
+                "iso8601_micro": "2019-02-05T15:07:49.708338Z", 
+                "minute": "07", 
+                "month": "02", 
+                "second": "49", 
+                "time": "15:07:49", 
+                "tz": "UTC", 
+                "tz_offset": "+0000", 
+                "weekday": "Tuesday", 
+                "weekday_number": "2", 
+                "weeknumber": "05", 
+                "year": "2019"
+            }, 
+            "ansible_default_ipv4": {
+                "address": "192.199.0.35", 
+                "alias": "eth0", 
+                "broadcast": "192.199.0.255", 
+                "gateway": "192.199.0.1", 
+                "interface": "eth0", 
+                "macaddress": "06:22:fb:8c:b9:1c", 
+                "mtu": 9001, 
+                "netmask": "255.255.255.0", 
+                "network": "192.199.0.0", 
+                "type": "ether"
+            }, 
+            "ansible_default_ipv6": {}, 
+            "ansible_device_links": {
+                "ids": {}, 
+                "labels": {}, 
+                "masters": {}, 
+                "uuids": {
+                    "xvda2": [
+                        "de4def96-ff72-4eb9-ad5e-0847257d1866"
+                    ]
+                }
+            }, 
+            "ansible_devices": {
+                "xvda": {
+                    "holders": [], 
+                    "host": "", 
+                    "links": {
+                        "ids": [], 
+                        "labels": [], 
+                        "masters": [], 
+                        "uuids": []
+                    }, 
+                    "model": null, 
+                    "partitions": {
+                        "xvda1": {
+                            "holders": [], 
+                            "links": {
+                                "ids": [], 
+                                "labels": [], 
+                                "masters": [], 
+                                "uuids": []
+                            }, 
+                            "sectors": "2048", 
+                            "sectorsize": 512, 
+                            "size": "1.00 MB", 
+                            "start": "2048", 
+                            "uuid": null
+                        }, 
+                        "xvda2": {
+                            "holders": [], 
+                            "links": {
+                                "ids": [], 
+                                "labels": [], 
+                                "masters": [], 
+                                "uuids": [
+                                    "de4def96-ff72-4eb9-ad5e-0847257d1866"
+                                ]
+                            }, 
+                            "sectors": "104853471", 
+                            "sectorsize": 512, 
+                            "size": "50.00 GB", 
+                            "start": "4096", 
+                            "uuid": "de4def96-ff72-4eb9-ad5e-0847257d1866"
+                        }
+                    }, 
+                    "removable": "0", 
+                    "rotational": "0", 
+                    "sas_address": null, 
+                    "sas_device_handle": null, 
+                    "scheduler_mode": "deadline", 
+                    "sectors": "104857600", 
+                    "sectorsize": "512", 
+                    "size": "50.00 GB", 
+                    "support_discard": "0", 
+                    "vendor": null, 
+                    "virtual": 1
+                }, 
+                "xvdb": {
+                    "holders": [], 
+                    "host": "", 
+                    "links": {
+                        "ids": [], 
+                        "labels": [], 
+                        "masters": [], 
+                        "uuids": []
+                    }, 
+                    "model": null, 
+                    "partitions": {}, 
+                    "removable": "0", 
+                    "rotational": "0", 
+                    "sas_address": null, 
+                    "sas_device_handle": null, 
+                    "scheduler_mode": "deadline", 
+                    "sectors": "41943040", 
+                    "sectorsize": "512", 
+                    "size": "20.00 GB", 
+                    "support_discard": "0", 
+                    "vendor": null, 
+                    "virtual": 1
+                }
+            }, 
+            "ansible_distribution": "RedHat", 
+            "ansible_distribution_file_parsed": true, 
+            "ansible_distribution_file_path": "/etc/redhat-release", 
+            "ansible_distribution_file_search_string": "Red Hat", 
+            "ansible_distribution_file_variety": "RedHat", 
+            "ansible_distribution_major_version": "7", 
+            "ansible_distribution_release": "Maipo", 
+            "ansible_distribution_version": "7.4", 
+            "ansible_dns": {
+                "nameservers": [
+                    "192.199.0.2"
+                ], 
+                "search": [
+                    "ec2.internal", 
+                    "2c70.internal"
+                ]
+            }, 
+            "ansible_domain": "ec2.internal", 
+            "ansible_effective_group_id": 1001, 
+            "ansible_effective_user_id": 1001, 
+            "ansible_env": {
+                "HOME": "/home/devops", 
+                "LANG": "en_US.UTF-8", 
+                "LESSOPEN": "||/usr/bin/lesspipe.sh %s", 
+                "LOGNAME": "devops", 
+                "LS_COLORS": "rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:", 
+                "MAIL": "/var/mail/devops", 
+                "PATH": "/usr/local/bin:/usr/bin", 
+                "PWD": "/home/devops", 
+                "SELINUX_LEVEL_REQUESTED": "", 
+                "SELINUX_ROLE_REQUESTED": "", 
+                "SELINUX_USE_CURRENT_RANGE": "", 
+                "SHELL": "/bin/bash", 
+                "SHLVL": "2", 
+                "SSH_CLIENT": "192.199.0.209 51598 22", 
+                "SSH_CONNECTION": "192.199.0.209 51598 192.199.0.35 22", 
+                "SSH_TTY": "/dev/pts/0", 
+                "TERM": "xterm-256color", 
+                "USER": "devops", 
+                "XDG_RUNTIME_DIR": "/run/user/1001", 
+                "XDG_SESSION_ID": "4", 
+                "_": "/usr/bin/python"
+            }, 
+            "ansible_eth0": {
+                "active": true, 
+                "device": "eth0", 
+                "features": {
+                    "busy_poll": "off [fixed]", 
+                    "fcoe_mtu": "off [fixed]", 
+                    "generic_receive_offload": "on", 
+                    "generic_segmentation_offload": "on", 
+                    "highdma": "off [fixed]", 
+                    "hw_tc_offload": "off [fixed]", 
+                    "l2_fwd_offload": "off [fixed]", 
+                    "large_receive_offload": "off [fixed]", 
+                    "loopback": "off [fixed]", 
+                    "netns_local": "off [fixed]", 
+                    "ntuple_filters": "off [fixed]", 
+                    "receive_hashing": "off [fixed]", 
+                    "rx_all": "off [fixed]", 
+                    "rx_checksumming": "on [fixed]", 
+                    "rx_fcs": "off [fixed]", 
+                    "rx_vlan_filter": "off [fixed]", 
+                    "rx_vlan_offload": "off [fixed]", 
+                    "rx_vlan_stag_filter": "off [fixed]", 
+                    "rx_vlan_stag_hw_parse": "off [fixed]", 
+                    "scatter_gather": "on", 
+                    "tcp_segmentation_offload": "on", 
+                    "tx_checksum_fcoe_crc": "off [fixed]", 
+                    "tx_checksum_ip_generic": "off [fixed]", 
+                    "tx_checksum_ipv4": "on", 
+                    "tx_checksum_ipv6": "off [fixed]", 
+                    "tx_checksum_sctp": "off [fixed]", 
+                    "tx_checksumming": "on", 
+                    "tx_fcoe_segmentation": "off [fixed]", 
+                    "tx_gre_csum_segmentation": "off [fixed]", 
+                    "tx_gre_segmentation": "off [fixed]", 
+                    "tx_gso_partial": "off [fixed]", 
+                    "tx_gso_robust": "on [fixed]", 
+                    "tx_ipip_segmentation": "off [fixed]", 
+                    "tx_lockless": "off [fixed]", 
+                    "tx_mpls_segmentation": "off [fixed]", 
+                    "tx_nocache_copy": "off", 
+                    "tx_scatter_gather": "on", 
+                    "tx_scatter_gather_fraglist": "off [fixed]", 
+                    "tx_sctp_segmentation": "off [fixed]", 
+                    "tx_sit_segmentation": "off [fixed]", 
+                    "tx_tcp6_segmentation": "off [fixed]", 
+                    "tx_tcp_ecn_segmentation": "off [fixed]", 
+                    "tx_tcp_mangleid_segmentation": "off", 
+                    "tx_tcp_segmentation": "on", 
+                    "tx_udp_tnl_csum_segmentation": "off [fixed]", 
+                    "tx_udp_tnl_segmentation": "off [fixed]", 
+                    "tx_vlan_offload": "off [fixed]", 
+                    "tx_vlan_stag_hw_insert": "off [fixed]", 
+                    "udp_fragmentation_offload": "off [fixed]", 
+                    "vlan_challenged": "off [fixed]"
+                }, 
+                "hw_timestamp_filters": [], 
+                "ipv4": {
+                    "address": "192.199.0.35", 
+                    "broadcast": "192.199.0.255", 
+                    "netmask": "255.255.255.0", 
+                    "network": "192.199.0.0"
+                }, 
+                "ipv6": [
+                    {
+                        "address": "fe80::422:fbff:fe8c:b91c", 
+                        "prefix": "64", 
+                        "scope": "link"
+                    }
+                ], 
+                "macaddress": "06:22:fb:8c:b9:1c", 
+                "module": "xen_netfront", 
+                "mtu": 9001, 
+                "pciid": "vif-0", 
+                "promisc": false, 
+                "timestamping": [
+                    "rx_software", 
+                    "software"
+                ], 
+                "type": "ether"
+            }, 
+            "ansible_fips": false, 
+            "ansible_form_factor": "Other", 
+            "ansible_fqdn": "ip-192-199-0-35.ec2.internal", 
+            "ansible_hostname": "appdb1", 
+            "ansible_interfaces": [
+                "lo", 
+                "eth0"
+            ], 
+            "ansible_is_chroot": true, 
+            "ansible_iscsi_iqn": "", 
+            "ansible_kernel": "3.10.0-693.el7.x86_64", 
+            "ansible_lo": {
+                "active": true, 
+                "device": "lo", 
+                "features": {
+                    "busy_poll": "off [fixed]", 
+                    "fcoe_mtu": "off [fixed]", 
+                    "generic_receive_offload": "on", 
+                    "generic_segmentation_offload": "on", 
+                    "highdma": "on [fixed]", 
+                    "hw_tc_offload": "off [fixed]", 
+                    "l2_fwd_offload": "off [fixed]", 
+                    "large_receive_offload": "off [fixed]", 
+                    "loopback": "on [fixed]", 
+                    "netns_local": "on [fixed]", 
+                    "ntuple_filters": "off [fixed]", 
+                    "receive_hashing": "off [fixed]", 
+                    "rx_all": "off [fixed]", 
+                    "rx_checksumming": "on [fixed]", 
+                    "rx_fcs": "off [fixed]", 
+                    "rx_vlan_filter": "off [fixed]", 
+                    "rx_vlan_offload": "off [fixed]", 
+                    "rx_vlan_stag_filter": "off [fixed]", 
+                    "rx_vlan_stag_hw_parse": "off [fixed]", 
+                    "scatter_gather": "on", 
+                    "tcp_segmentation_offload": "on", 
+                    "tx_checksum_fcoe_crc": "off [fixed]", 
+                    "tx_checksum_ip_generic": "on [fixed]", 
+                    "tx_checksum_ipv4": "off [fixed]", 
+                    "tx_checksum_ipv6": "off [fixed]", 
+                    "tx_checksum_sctp": "on [fixed]", 
+                    "tx_checksumming": "on", 
+                    "tx_fcoe_segmentation": "off [fixed]", 
+                    "tx_gre_csum_segmentation": "off [fixed]", 
+                    "tx_gre_segmentation": "off [fixed]", 
+                    "tx_gso_partial": "off [fixed]", 
+                    "tx_gso_robust": "off [fixed]", 
+                    "tx_ipip_segmentation": "off [fixed]", 
+                    "tx_lockless": "on [fixed]", 
+                    "tx_mpls_segmentation": "off [fixed]", 
+                    "tx_nocache_copy": "off [fixed]", 
+                    "tx_scatter_gather": "on [fixed]", 
+                    "tx_scatter_gather_fraglist": "on [fixed]", 
+                    "tx_sctp_segmentation": "on", 
+                    "tx_sit_segmentation": "off [fixed]", 
+                    "tx_tcp6_segmentation": "on", 
+                    "tx_tcp_ecn_segmentation": "on", 
+                    "tx_tcp_mangleid_segmentation": "on", 
+                    "tx_tcp_segmentation": "on", 
+                    "tx_udp_tnl_csum_segmentation": "off [fixed]", 
+                    "tx_udp_tnl_segmentation": "off [fixed]", 
+                    "tx_vlan_offload": "off [fixed]", 
+                    "tx_vlan_stag_hw_insert": "off [fixed]", 
+                    "udp_fragmentation_offload": "on", 
+                    "vlan_challenged": "on [fixed]"
+                }, 
+                "hw_timestamp_filters": [], 
+                "ipv4": {
+                    "address": "127.0.0.1", 
+                    "broadcast": "host", 
+                    "netmask": "255.0.0.0", 
+                    "network": "127.0.0.0"
+                }, 
+                "ipv6": [
+                    {
+                        "address": "::1", 
+                        "prefix": "128", 
+                        "scope": "host"
+                    }
+                ], 
+                "mtu": 65536, 
+                "promisc": false, 
+                "timestamping": [
+                    "rx_software", 
+                    "software"
+                ], 
+                "type": "loopback"
+            }, 
+            "ansible_local": {}, 
+            "ansible_lsb": {}, 
+            "ansible_machine": "x86_64", 
+            "ansible_machine_id": "1d33fe05f9a548f9bf2a4bb4f30bff5b", 
+            "ansible_memfree_mb": 1465, 
+            "ansible_memory_mb": {
+                "nocache": {
+                    "free": 1628, 
+                    "used": 209
+                }, 
+                "real": {
+                    "free": 1465, 
+                    "total": 1837, 
+                    "used": 372
+                }, 
+                "swap": {
+                    "cached": 0, 
+                    "free": 0, 
+                    "total": 0, 
+                    "used": 0
+                }
+            }, 
+            "ansible_memtotal_mb": 1837, 
+            "ansible_mounts": [
+                {
+                    "block_available": 12718763, 
+                    "block_size": 4096, 
+                    "block_total": 13104123, 
+                    "block_used": 385360, 
+                    "device": "/dev/xvda2", 
+                    "fstype": "xfs", 
+                    "inode_available": 26162208, 
+                    "inode_total": 26213312, 
+                    "inode_used": 51104, 
+                    "mount": "/", 
+                    "options": "rw,seclabel,relatime,attr2,inode64,noquota", 
+                    "size_available": 52096053248, 
+                    "size_total": 53674487808, 
+                    "uuid": "de4def96-ff72-4eb9-ad5e-0847257d1866"
+                }
+            ], 
+            "ansible_nodename": "appdb1.2c70.internal", 
+            "ansible_os_family": "RedHat", 
+            "ansible_pkg_mgr": "yum", 
+            "ansible_processor": [
+                "0", 
+                "GenuineIntel", 
+                "Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz"
+            ], 
+            "ansible_processor_cores": 1, 
+            "ansible_processor_count": 1, 
+            "ansible_processor_threads_per_core": 1, 
+            "ansible_processor_vcpus": 1, 
+            "ansible_product_name": "HVM domU", 
+            "ansible_product_serial": "NA", 
+            "ansible_product_uuid": "NA", 
+            "ansible_product_version": "4.2.amazon", 
+            "ansible_python": {
+                "executable": "/usr/bin/python", 
+                "has_sslcontext": true, 
+                "type": "CPython", 
+                "version": {
+                    "major": 2, 
+                    "micro": 5, 
+                    "minor": 7, 
+                    "releaselevel": "final", 
+                    "serial": 0
+                }, 
+                "version_info": [
+                    2, 
+                    7, 
+                    5, 
+                    "final", 
+                    0
+                ]
+            }, 
+            "ansible_python_version": "2.7.5", 
+            "ansible_real_group_id": 1001, 
+            "ansible_real_user_id": 1001, 
+            "ansible_selinux": {
+                "config_mode": "enforcing", 
+                "mode": "enforcing", 
+                "policyvers": 28, 
+                "status": "enabled", 
+                "type": "targeted"
+            }, 
+            "ansible_selinux_python_present": true, 
+            "ansible_service_mgr": "systemd", 
+            "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIFMJfN+SLxuOru7G4TrSmk03Y+Z5wL6nZxb+Xy1eaaKFVGGeuMjouVA9Ony9OY6UwF6gYGd18EVs2+NKiF4J2E=", 
+            "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAILDG00pb3pGwkePCCc/vrVqWX2C3mTkPugAnZofYh3qJ", 
+            "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDcBri9yzNBIOS6/PqTrdStNxaZDfvvpymw3+v2ZP+MW5rRnJCX5r/sRd1N/xBUZ1zIyinuxtU8oiAcmB8Lr5DIeC1CNH9vEV3JzjMd/s2vnlhu1NaMRxN7OSZrPNCL2FO114R+jwgAOaHdmM8YfMGRCjrS/Yqb2xT9kBti4dw7HOR2zCDFOmpdPY3f8nu7xcCyd7VbmoyHahNlQpZhcTBNJ9eC/YwTY1SWZQXQZbtFkSlKWCRjv2bS5xCNIexXh9r+9pfEUiCvmSAiFO2OXI4vFT/fG/n2x6lCr2Ccb4dmiRSfAy5wELVtPafd2Egt0kEo6A3+smTJAKcmsHoel6Sb", 
+            "ansible_swapfree_mb": 0, 
+            "ansible_swaptotal_mb": 0, 
+            "ansible_system": "Linux", 
+            "ansible_system_capabilities": [
+                ""
+            ], 
+            "ansible_system_capabilities_enforced": "True", 
+            "ansible_system_vendor": "Xen", 
+            "ansible_uptime_seconds": 7004, 
+            "ansible_user_dir": "/home/devops", 
+            "ansible_user_gecos": "", 
+            "ansible_user_gid": 1001, 
+            "ansible_user_id": "devops", 
+            "ansible_user_shell": "/bin/bash", 
+            "ansible_user_uid": 1001, 
+            "ansible_userspace_architecture": "x86_64", 
+            "ansible_userspace_bits": "64", 
+            "ansible_virtualization_role": "guest", 
+            "ansible_virtualization_type": "xen", 
+            "gather_subset": [
+                "all"
+            ], 
+            "module_setup": true
+        }, 
+        "changed": false, 
+        "failed": false
+    }
+}
+2019-02-05 15:07:49,898 p=2544 u=devops |  PLAY RECAP *****************************************************************************************************************************************************************************************
+2019-02-05 15:07:49,898 p=2544 u=devops |  appdb1.2c70.internal       : ok=3    changed=0    unreachable=0    failed=0   
+2019-02-05 15:08:15,766 p=2580 u=devops |  ERROR! the playbook: lar could not be found
+2019-02-05 15:08:20,143 p=2586 u=devops |  ERROR! the playbook: lar could not be found
+2019-02-05 15:08:22,596 p=2591 u=devops |  ERROR! the playbook: lar could not be found
+2019-02-05 15:08:25,728 p=2596 u=devops |  PLAY [db] ******************************************************************************************************************************************************************************************
+2019-02-05 15:08:25,737 p=2596 u=devops |  TASK [Gathering Facts] *****************************************************************************************************************************************************************************
+2019-02-05 15:08:26,543 p=2596 u=devops |  ok: [appdb1.2c70.internal]
+2019-02-05 15:08:26,559 p=2596 u=devops |  TASK [Gather facts] ********************************************************************************************************************************************************************************
+2019-02-05 15:08:27,105 p=2596 u=devops |  ok: [appdb1.2c70.internal]
+2019-02-05 15:08:27,119 p=2596 u=devops |  TASK [Display facts] *******************************************************************************************************************************************************************************
+2019-02-05 15:08:27,159 p=2596 u=devops |  ok: [appdb1.2c70.internal] => {
+    "db_facts.ansible_facts.ansible_all_ipv4_addresses": [
+        "192.199.0.35"
+    ]
+}
+2019-02-05 15:08:27,161 p=2596 u=devops |  PLAY RECAP *****************************************************************************************************************************************************************************************
+2019-02-05 15:08:27,161 p=2596 u=devops |  appdb1.2c70.internal       : ok=3    changed=0    unreachable=0    failed=0   
+2019-02-05 15:09:12,291 p=2633 u=devops |  PLAY [localhost] ***********************************************************************************************************************************************************************************
+2019-02-05 15:09:12,299 p=2633 u=devops |  TASK [Gathering Facts] *****************************************************************************************************************************************************************************
+2019-02-05 15:09:12,866 p=2633 u=devops |  ok: [localhost]
+2019-02-05 15:09:12,881 p=2633 u=devops |  TASK [Print phone records] *************************************************************************************************************************************************************************
+2019-02-05 15:09:12,931 p=2633 u=devops |  ok: [localhost] => (item={'key': u'Prakhar', 'value': {u'name': u'Prakhar Srivastava', u'telephone': 667777777}}) => {
+    "msg": "User Prakhar is Prakhar Srivastava (667777777)"
+}
+2019-02-05 15:09:12,937 p=2633 u=devops |  ok: [localhost] => (item={'key': u'Josh', 'value': {u'name': u'Joshua Disraeli', u'telephone': 33922999}}) => {
+    "msg": "User Josh is Joshua Disraeli (33922999)"
+}
+2019-02-05 15:09:12,940 p=2633 u=devops |  PLAY RECAP *****************************************************************************************************************************************************************************************
+2019-02-05 15:09:12,940 p=2633 u=devops |  localhost                  : ok=2    changed=0    unreachable=0    failed=0   
+2019-02-05 16:26:48,582 p=2867 u=devops |  PLAY [localhost] ******************************************************************************************************************************************************************************************
+2019-02-05 16:26:48,590 p=2867 u=devops |  TASK [Gathering Facts] ************************************************************************************************************************************************************************************
+2019-02-05 16:26:49,213 p=2867 u=devops |  ok: [localhost]
+2019-02-05 16:26:49,228 p=2867 u=devops |  TASK [Print phone records] ********************************************************************************************************************************************************************************
+2019-02-05 16:26:49,262 p=2867 u=devops |  ok: [localhost] => (item={'key': u'Prakhar', 'value': {u'name': u'Prakhar Srivastava', u'telephone': 667777777}}) => {
+    "msg": "User Prakhar is Prakhar Srivastava (667777777)"
+}
+2019-02-05 16:26:49,267 p=2867 u=devops |  ok: [localhost] => (item={'key': u'Josh', 'value': {u'name': u'Joshua Disraeli', u'telephone': 33922999}}) => {
+    "msg": "User Josh is Joshua Disraeli (33922999)"
+}
+2019-02-05 16:26:49,269 p=2867 u=devops |  PLAY RECAP ************************************************************************************************************************************************************************************************
+2019-02-05 16:26:49,269 p=2867 u=devops |  localhost                  : ok=2    changed=0    unreachable=0    failed=0   
+2019-02-05 16:28:30,357 p=2917 u=devops |  PLAY [db] *************************************************************************************************************************************************************************************************
+2019-02-05 16:28:30,365 p=2917 u=devops |  TASK [Gathering Facts] ************************************************************************************************************************************************************************************
+2019-02-05 16:28:32,652 p=2917 u=devops |  ok: [appdb1.2c70.internal]
+2019-02-05 16:28:32,667 p=2917 u=devops |  TASK [Gather facts] ***************************************************************************************************************************************************************************************
+2019-02-05 16:28:33,204 p=2917 u=devops |  ok: [appdb1.2c70.internal]
+2019-02-05 16:28:33,218 p=2917 u=devops |  TASK [Display facts] **************************************************************************************************************************************************************************************
+2019-02-05 16:28:33,257 p=2917 u=devops |  ok: [appdb1.2c70.internal] => {
+    "db_facts.ansible_facts.ansible_all_ipv4_addresses": [
+        "192.199.0.35"
+    ]
+}
+2019-02-05 16:28:33,258 p=2917 u=devops |  PLAY RECAP ************************************************************************************************************************************************************************************************
+2019-02-05 16:28:33,258 p=2917 u=devops |  appdb1.2c70.internal       : ok=3    changed=0    unreachable=0    failed=0   
+2019-02-05 16:30:50,269 p=2951 u=devops |  PLAY [db] *************************************************************************************************************************************************************************************************
+2019-02-05 16:30:50,277 p=2951 u=devops |  TASK [Gathering Facts] ************************************************************************************************************************************************************************************
+2019-02-05 16:30:52,350 p=2951 u=devops |  ok: [appdb1.2c70.internal]
+2019-02-05 16:30:52,365 p=2951 u=devops |  TASK [Gather facts] ***************************************************************************************************************************************************************************************
+2019-02-05 16:30:52,900 p=2951 u=devops |  ok: [appdb1.2c70.internal]
+2019-02-05 16:30:52,915 p=2951 u=devops |  TASK [Display facts] **************************************************************************************************************************************************************************************
+2019-02-05 16:30:52,954 p=2951 u=devops |  ok: [appdb1.2c70.internal] => {
+    "db_facts.ansible_facts.ansible_all_ipv4_addresses": [
+        "192.199.0.35"
+    ]
+}
+2019-02-05 16:30:52,956 p=2951 u=devops |  PLAY RECAP ************************************************************************************************************************************************************************************************
+2019-02-05 16:30:52,956 p=2951 u=devops |  appdb1.2c70.internal       : ok=3    changed=0    unreachable=0    failed=0   
+2019-02-05 18:40:22,228 p=3403 u=devops |  app1.2c70.internal | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh_exchange_identification: Connection closed by remote host\r\n", 
+    "unreachable": true
+}
+2019-02-05 18:40:22,296 p=3403 u=devops |  suppport1.2c70.internal | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh_exchange_identification: Connection closed by remote host\r\n", 
+    "unreachable": true
+}
+2019-02-05 18:40:23,949 p=3403 u=devops |  support1.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 18:40:23,954 p=3403 u=devops |  app2.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 18:40:23,963 p=3403 u=devops |  appdb1.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 18:40:23,982 p=3403 u=devops |  frontend1.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 18:44:26,282 p=3504 u=devops |  PLAY [testing connection types] ********************************************************************************************************************************************************************************
+2019-02-05 18:44:26,290 p=3504 u=devops |  TASK [Gathering Facts] *****************************************************************************************************************************************************************************************
+2019-02-05 18:44:26,847 p=3504 u=devops |  ok: [bastion.2c70.internal]
+2019-02-05 18:44:28,150 p=3504 u=devops |  ok: [support1.2c70.internal]
+2019-02-05 18:44:28,166 p=3504 u=devops |  TASK [template out hostfile] ***********************************************************************************************************************************************************************************
+2019-02-05 18:44:28,632 p=3504 u=devops |  changed: [bastion.2c70.internal]
+2019-02-05 18:44:28,958 p=3504 u=devops |  changed: [support1.2c70.internal]
+2019-02-05 18:44:28,959 p=3504 u=devops |  PLAY RECAP *****************************************************************************************************************************************************************************************************
+2019-02-05 18:44:28,960 p=3504 u=devops |  bastion.2c70.internal      : ok=2    changed=1    unreachable=0    failed=0   
+2019-02-05 18:44:28,960 p=3504 u=devops |  support1.2c70.internal     : ok=2    changed=1    unreachable=0    failed=0   
+2019-02-05 18:46:52,709 p=3617 u=devops |  PLAY [all] *****************************************************************************************************************************************************************************************************
+2019-02-05 18:46:52,717 p=3617 u=devops |  TASK [Gathering Facts] *****************************************************************************************************************************************************************************************
+2019-02-05 18:46:52,779 p=3617 u=devops |  fatal: [app1.2c70.internal]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh_exchange_identification: Connection closed by remote host\r\n", "unreachable": true}
+2019-02-05 18:46:52,780 p=3617 u=devops |  	to retry, use: --limit @/home/devops/ansible_implementation/serial_play.retry
+
+2019-02-05 18:46:52,781 p=3617 u=devops |  PLAY RECAP *****************************************************************************************************************************************************************************************************
+2019-02-05 18:46:52,781 p=3617 u=devops |  app1.2c70.internal         : ok=0    changed=0    unreachable=1    failed=0   
+2019-02-05 18:47:50,535 p=3657 u=devops |  app1.2c70.internal | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh_exchange_identification: Connection closed by remote host\r\n", 
+    "unreachable": true
+}
+2019-02-05 18:47:50,603 p=3657 u=devops |  suppport1.2c70.internal | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh_exchange_identification: Connection closed by remote host\r\n", 
+    "unreachable": true
+}
+2019-02-05 18:47:52,296 p=3657 u=devops |  support1.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 18:47:52,303 p=3657 u=devops |  appdb1.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 18:47:52,312 p=3657 u=devops |  frontend1.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 18:47:52,328 p=3657 u=devops |  app2.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 18:48:17,416 p=3734 u=devops |  suppport1.2c70.internal | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh_exchange_identification: Connection closed by remote host\r\n", 
+    "unreachable": true
+}
+2019-02-05 18:48:17,429 p=3734 u=devops |  app1.2c70.internal | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh_exchange_identification: Connection closed by remote host\r\n", 
+    "unreachable": true
+}
+2019-02-05 18:48:17,885 p=3734 u=devops |  support1.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 18:48:17,889 p=3734 u=devops |  app2.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 18:48:17,897 p=3734 u=devops |  appdb1.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+2019-02-05 18:48:17,908 p=3734 u=devops |  frontend1.2c70.internal | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
