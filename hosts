@@ -1,0 +1,27 @@
+frontend1.2c70.internal
+appdb1.2c70.internal
+app1.2c70.internal
+support1.2c70.internal
+app2.2c70.internal
+[lb]
+frontend1.2c70.internal
+
+[webservers]
+app1.2c70.internal
+app2.2c70.internal 
+
+[db]
+appdb1.2c70.internal
+
+[mailserver]
+support1.2c70.internal
+
+[samba_servers]
+suppport1.2c70.internal
+
+[secure_webserver]
+app1.2c70.internal ansible_host=support2.2c70.internal
+
+[all:vars]
+ansible_user = devops
+ansible_ssh_private_key_file = /home/devops/.ssh/id_rsa
